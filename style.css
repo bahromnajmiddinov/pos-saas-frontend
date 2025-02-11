@@ -1,0 +1,399 @@
+:root {
+    --primary-color: #4caf50;    /* green */
+    --secondary-color: #2196f3;  /* blue */
+    --background-color: #f4f4f4; /* light grey */
+    --text-color: #333;          /* dark grey */
+    --text-color-2: #636363;
+    --text-color-3: #888888;
+    --accent-color: #ff9800;     /* orange */
+    --success-color: #edff8d;    /* light green */
+    --error-color: #fd5b56;      /* red */
+    --white-color: #f8f7f5;         /* white */
+
+    --border-radius: 15px;
+}
+
+/* 
+#edff8d
+#363636
+#f8f7f5
+#636363
+#888888
+#fd5b56
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* background-color: white; */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    background: linear-gradient(rgba(61, 61, 61, 0.1), rgba(61, 61, 61, 0.1)), 
+                url('./img/w1.jpg') center/cover no-repeat;
+    height: calc(100vh - 2rem);
+    /* width: calc(100vw - 6rem); */
+    backdrop-filter: blur(100px);
+    /* overflow: hidden; */
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 1rem 3rem;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 
+<----------------------- components ----------------------->
+*/
+
+.card {
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    padding: 10px;
+}
+
+.btn, .card-2 {
+    background-color: rgba(252, 252, 252, 0.3);
+    color: var(--text-color);
+    backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    transition: all .7s;
+}
+
+.btn:hover {
+    background-color: var(--success-color);
+}
+
+.btn-2 {
+    background-color: var(--white-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    padding: .2rem .7rem;
+    border: .1px solid var(--text-color-3);
+}
+
+.filter, .cart-filter  {
+    display: block;
+}
+
+.cart-filter {
+    background: linear-gradient(to right, rgba(252, 252, 252, 0.3), rgba(0, 0, 0, 0));
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 
+<----------------------- end of components ----------------------->
+*/
+
+/* 
+<----------------------- main ui ----------------------->
+*/
+body {
+    display: grid;
+    grid-template-areas: 'header header'
+                         'aside  main';
+    grid-template-columns: 222px 1fr;
+    grid-template-rows: auto 1fr;
+    gap: .5rem;
+}
+
+#header {
+    grid-area: header;
+}
+
+#aside {
+    grid-area: aside;
+}
+
+#main {
+    grid-area: main;
+}
+/* 
+<----------------------- end of main ui ----------------------->
+*/
+
+/* 
+<----------------------- header ----------------------->
+*/
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 4rem;
+}
+
+#header .filter {
+    flex-grow: 2;
+    text-align: center;
+}
+
+#header .filter li {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-right: .5rem; 
+}
+
+#header .filter li:last-child {
+    margin-right: 0;
+}
+
+.nav {
+    cursor: auto;
+}
+
+.nav .nav-btn {
+    background: transparent;
+    border: transparent;
+    font-size: 1.3rem;
+    color: var(--text-color-2);
+    margin-right: 1rem;
+    cursor: pointer;
+}
+/* 
+<----------------------- end of header ----------------------->
+*/
+
+/* 
+<----------------------- aside ----------------------->
+*/
+.aside-btn-list {
+    flex-direction: column;
+}
+
+.aside-btn-element {
+    display: inline-block;
+    padding: .2rem;
+    width: 100%;
+}
+
+.aside-btn-btn {
+    width: 100%;
+}
+
+.aside-btn-btn span {
+    margin-right: .5rem;
+}
+/* 
+<----------------------- enf of aside ----------------------->
+*/
+
+/* 
+<----------------------- main ----------------------->
+*/
+#main .filter {
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main .filter .srch-btn, 
+#main .filter .scn-btn {
+    padding: .5rem;
+    border-radius: 10px;
+}
+
+#main .filter .srch-btn {
+    /* flex-grow: 2; */
+}
+
+/* .cart-filter {
+    display: flex;
+    fle
+} */
+
+.category-btn {
+    padding: .4rem 1rem;
+    padding-right: 2.5rem;
+    text-align: start;
+    border-radius: var(--border-radius);
+    border: transparent;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    margin-right: .5rem;
+}
+
+.category-btn:last-child {
+    margin-right: 0;
+}
+
+.category-title,
+.category-count {
+    display: block;
+}
+
+.category-title {
+    color: var(--text-color-3)
+}
+
+.category-count {
+    color: var(--text-color-2);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: .5rem;
+}
+/* 
+<----------------------- enf of main ----------------------->
+*/
+
+/* 
+<----------------------- products section ----------------------->
+*/
+.products-section {
+    display: grid;
+    grid-template-areas: 'title      title'
+                         'products   order-card';
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: .5rem;
+    /* overflow: hidden; */
+}
+
+.products-section-title {
+    grid-area: title;
+    color: var(--text-color);
+    margin-top: 1.5rem;
+}
+
+.products {
+    grid-area: products;
+    height: calc(100vh - 125px - 23px - 4px - 53.38px - 48px - 10rem);
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* grid-template-rows: fill-content; */
+    gap: .85rem;
+    scrollbar-width: none;
+}
+
+.product-img {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.product-title {
+    color: var(--text-color-2);
+}
+
+.product-code,
+.product-qty {
+    font-size: .75rem;
+    font-weight: bold;
+    color: var(--text-color-3);
+    margin-top: .5rem;
+}
+
+.product-code span,
+.product-qty span {
+    color: var(--text-color-2);
+}
+
+.product-footer {
+    margin-top: .5rem;
+    color: var(--text-color-2);
+    font-weight: bold;
+    font-size: .9rem;
+}
+
+.order-card {
+    grid-area: order-card;
+    max-height: calc(100vh - 125px - 23px - 4px - 53.38px - 48px - 10rem);
+}
+
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.order-card-product {
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    margin-bottom: .5rem;
+}
+
+.order-card-product-img {
+    height: 100%;
+}
+
+.order-card-product-detail {
+    flex-grow: 2;
+    align-self: start;
+}
+
+.order-card-product-detail .product-title {
+    font-size: .8rem;
+}
+
+.other-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .75rem;
+}
+
+.order-card-product-footer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    font-size: .75rem;
+}
+
+.order-card-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .9rem;
+}
+/* 
+<----------------------- enf of products section ----------------------->
+*/
