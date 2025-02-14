@@ -158,6 +158,30 @@
                 <span class="category-title">Jeans pant</span>
                 <span class="category-count">125</span>
             </button>
+            <button class="category-btn">
+                <span class="category-title">All</span>
+                <span class="category-count">23145</span>
+            </button>
+            <button class="category-btn">
+                <span class="category-title">T-shirts</span>
+                <span class="category-count">224</span>
+            </button>
+            <button class="category-btn">
+                <span class="category-title">Jeans pant</span>
+                <span class="category-count">125</span>
+            </button>
+            <button class="category-btn">
+                <span class="category-title">All</span>
+                <span class="category-count">23145</span>
+            </button>
+            <button class="category-btn">
+                <span class="category-title">T-shirts</span>
+                <span class="category-count">224</span>
+            </button>
+            <button class="category-btn">
+                <span class="category-title">Jeans pant</span>
+                <span class="category-count">125</span>
+            </button>
         </div>
         <section class="products-section">
             <h2 class="products-section-title">Choose Products</h2>
@@ -672,6 +696,63 @@
                             <p class="product-title">Product title</p>
                             <div class="product-code">122345</div>
                             <div class="other-details">
+                                <div class="size">Size: XL</div>
+                                Quantity: <input class="quantity product-card-input" value="34" type="number" onclick="showNumpad(event)">
+                            </div>
+                        </div>
+                        <div class="order-card-product-footer">
+                            <i class="fa-solid fa-xmark"></i>
+                            <div class="order-card-price-input">
+                                $<input type="number" value="200" class="product-card-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-card-product">
+                        <div class="order-card-product-img">
+                            <img src="./img/products/1.jpg" alt="">
+                        </div>
+                        <div class="order-card-product-detail">
+                            <div class="detail">
+                                <p class="product-title">Product title</p>
+                                <div class="product-code">122345</div>
+                                <div class="other-details">
+                                    <div class="size">XL</div>
+                                    <div class="quantity">34</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-card-product-footer">
+                            <span><i class="fa-solid fa-xmark"></i></span>
+                            $ 200
+                        </div>
+                    </div>
+                    <div class="order-card-product">
+                        <div class="order-card-product-img">
+                            <img src="./img/products/1.jpg" alt="">
+                        </div>
+                        <div class="order-card-product-detail">
+                            <div class="detail">
+                                <p class="product-title">Product title</p>
+                                <div class="product-code">122345</div>
+                                <div class="other-details">
+                                    <div class="size">XL</div>
+                                    <div class="quantity">34</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-card-product-footer">
+                            <span><i class="fa-solid fa-xmark"></i></span>
+                            $ 200
+                        </div>
+                    </div>
+                    <div class="order-card-product">
+                        <div class="order-card-product-img">
+                            <img src="./img/products/1.jpg" alt="">
+                        </div>
+                        <div class="order-card-product-detail">
+                            <p class="product-title">Product title</p>
+                            <div class="product-code">122345</div>
+                            <div class="other-details">
                                 <div class="size">XL</div>
                                 <div class="quantity">34</div>
                             </div>
@@ -686,37 +767,16 @@
                             <img src="./img/products/1.jpg" alt="">
                         </div>
                         <div class="order-card-product-detail">
-                            <div class="detail">
-                                <p class="product-title">Product title</p>
-                                <div class="product-code">122345</div>
-                                <div class="other-details">
-                                    <div class="size">XL</div>
-                                    <div class="quantity">34</div>
-                                </div>
+                            <p class="product-title">Product title</p>
+                            <div class="product-code">122345</div>
+                            <div class="other-details">
+                                <div class="size">XL</div>
+                                <input class="quantity product-card-input" id="quantity" value="34" type="number"/>
                             </div>
                         </div>
                         <div class="order-card-product-footer">
-                            <span><i class="fa-solid fa-xmark"></i></span>
-                            $ 200
-                        </div>
-                    </div>
-                    <div class="order-card-product">
-                        <div class="order-card-product-img">
-                            <img src="./img/products/1.jpg" alt="">
-                        </div>
-                        <div class="order-card-product-detail">
-                            <div class="detail">
-                                <p class="product-title">Product title</p>
-                                <div class="product-code">122345</div>
-                                <div class="other-details">
-                                    <div class="size">XL</div>
-                                    <div class="quantity">34</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="order-card-product-footer">
-                            <span><i class="fa-solid fa-xmark"></i></span>
-                            $ 200
+                            <i class="fa-solid fa-xmark"></i>
+                            $ <input type="number" value="200" class="product-card-input">
                         </div>
                     </div>
                 </div>
@@ -738,12 +798,35 @@
                         <div class="order-card-price-row-price">$77.00</div>
                     </div>
                 </div>
-                <div class="order-card-numpad"></div>
+                <div class="order-card-numpad" id="order-card-numpad">
+                    <div class="order-card-numpad-display">0</div>
+                    <!--Keys-START-->
+                    <div class="order-card-numpad-key">
+                        <button class="nm-btn key-op" data-action="add">+</button>
+                        <button class="nm-btn key-op" data-action="substract">-</button>
+                        <button class="nm-btn key-op" data-action="multiply">&times;</button>
+                        <button class="nm-btn key-op" data-action="divide">÷</button>
+                        <button class="nm-btn numpad">7</button>
+                        <button class="nm-btn numpad">8</button>
+                        <button class="nm-btn numpad">9</button>
+                        <button class="nm-btn numpad">4</button>
+                        <button class="nm-btn numpad">5</button>
+                        <button class="nm-btn numpad">6</button>
+                        <button class="nm-btn numpad">1</button>
+                        <button class="nm-btn numpad">2</button>
+                        <button class="nm-btn numpad">3</button>
+                        <button class="nm-btn numpad">0</button>
+                        <button class="nm-btn numpad">.</button>
+                        <button class="nm-btn" data-action="clear">AC</button>
+                        <button class="nm-btn key-eq" data-action="equate">=</button>
+                    </div>                    
+                </div>
                 <div class="order-card-btns"></div>
             </div>
         </section>
     </main>
     <!-- end of main -->
 
+    <script src="./script.js"></script>
 </body>
 </html>
